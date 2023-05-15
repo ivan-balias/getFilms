@@ -1,0 +1,20 @@
+{
+  "name": "getfilms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "gulp watch"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0"
+  },
+  "dependencies": {
+    "gulp-imports": "^0.0.3"
+  }
+}
