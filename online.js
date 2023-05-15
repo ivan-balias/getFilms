@@ -942,7 +942,6 @@ const startPlugin = () => {
     },
     onContextLaunch: (object) => {
       resetTemplates();
-
       Lampa.Component.add('cineSearch', component)
 
       Lampa.Activity.push({
