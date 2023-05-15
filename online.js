@@ -12,7 +12,7 @@
   let extract = {}
   let results = []
   let object = _object
-  let embed = component.proxy('scc') + ENDPOINT;
+  // let embed = component.proxy('scc') + ENDPOINT;
 
   let filter_items = {}
 
