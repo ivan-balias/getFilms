@@ -57,8 +57,6 @@ function component(object) {
   let sources = {
     scc: scc
   }
-
-
   let last
   let extended
   let selected_id
