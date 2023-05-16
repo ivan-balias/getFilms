@@ -74,16 +74,43 @@
     console.log(fromUserLang)
   }
 
-  function append(items) {
+  function append(items){
+    _object.reset()
 
-    _object.reset();
+    _object.draw(items,{
+      onRender: (item, html)=>{
+        if(get_links_wait) html.find('.online-prestige__body').append($('<div class="online-prestige__scan-file"><div class="broadcast__scan"><div></div></div></div>'))
+      },
+      onEnter: (item, html)=>{
+        let extra = getFile(item, item.quality)
 
-    _object.draw(items, {
-      onRender: (item,html) => {
-        
+        if(extra.file){
+          let playlist = []
+          let first    = toPlayElement(item)
+
+          if(item.season){
+            items.forEach(elem=>{
+              playlist.push(toPlayElement(elem))
+            })
+          }
+          else{
+            playlist.push(first)
+          }
+
+          if(playlist.length > 1) first.playlist = playlist
+
+          Lampa.Player.play(first)
+
+          Lampa.Player.playlist(playlist)
+
+          item.mark()
+        }
+        else Lampa.Noty.show(Lampa.Lang.translate(get_links_wait ? 'online_waitlink' : 'online_nolink'))
+      },
+      onContextMenu: (item, html, data, call)=>{
+        call(getFile(item, item.quality))
       }
     })
-
   }
 
 }
