@@ -60,6 +60,7 @@
 
   function build(_data){
     console.log(_data)
+    
     // 'asdasd'
     if(data.movie){
 
