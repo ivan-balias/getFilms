@@ -53,10 +53,16 @@
 
   function success(data) {
     results = data
-
+    build(results)
 
 
   }
+
+  function build(_data){
+    console.log(data)
+    // if(data)
+  }
+
 }
 function component(object) {
   let network = new Lampa.Reguest()
