@@ -51,8 +51,8 @@
     Lampa.Arrays.extend(choice, saved, true)
   }
 
-  function success(data) {
-    results = data
+  function success(json) {
+    results = json
     build(results)
 
 
@@ -61,7 +61,7 @@
   function build(_data){
     console.log(_data)
 
-    
+
 
     // 'asdasd'
     if(data.movie){
