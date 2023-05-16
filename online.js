@@ -167,6 +167,7 @@ function component(object) {
 
     return prox
   }
+
   
   this.create = function () {
     return this.render()
