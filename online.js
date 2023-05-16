@@ -23,7 +23,7 @@
   let filter_items = {}
 
   this.searchByImdbID = function (_object, data) {
-    if (this.wait_similars) return this.find(data[0].id)
+    // if (this.wait_similars) return this.find(data[0].id)
 
     object = _object
 
