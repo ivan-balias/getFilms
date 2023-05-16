@@ -74,7 +74,11 @@
     console.log(fromUserLang)
   }
 
-  
+  function append(items) {
+
+    
+
+  }
 
 }
 function component(object) {
