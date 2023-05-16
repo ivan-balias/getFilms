@@ -66,11 +66,8 @@
     console.log(userLang)
 
     const selectedFromUserLang = results.filter(result => {
-
+      return result.audio.at(0) === userLang
     })
-
-
-
     //'asd
     console.log(results)
     console.log(selectedFromUserLang)
