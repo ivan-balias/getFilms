@@ -68,7 +68,8 @@
     const selectedFromUserLang = results.filter(result => {
 
     })
-    
+
+    console.log(results)
 
     console.log(selectedFromUserLang)
 
