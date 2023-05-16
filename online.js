@@ -76,7 +76,7 @@
 
   function append(items) {
 
-    
+    _object.reset();
 
   }
 
