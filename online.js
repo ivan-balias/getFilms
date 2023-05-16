@@ -58,7 +58,7 @@
 
     build(json)
 
-
+    _object.loading(false)
   }
 
   function build(streams) {
