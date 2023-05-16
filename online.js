@@ -8,6 +8,12 @@
   }
   const TOKEN = "th2tdy0no8v1zoh1fs59"
 
+  let choice = {
+    season: 0,
+    voice: 0,
+    voice_name: ''
+  }
+
   console.log(data)
 
   let network = new Lampa.Reguest()
