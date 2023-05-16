@@ -67,7 +67,7 @@
 
     const selectedFromUserLang = results.filter(result => {
       return result.audio.find((audio) => {
-        
+        return audio.language === userLang
       })
     })
     //'asd
