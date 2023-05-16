@@ -47,8 +47,8 @@
 
   this.fileLink = async (ident) => {
     console.log(ident)
-    // const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream`;
-    // return this.loadValue(PATH.FILE_LINK, body, "link");
+    const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream`;
+    return await this.loadValue(PATH.FILE_LINK, body, "link");
   }
 }
 
