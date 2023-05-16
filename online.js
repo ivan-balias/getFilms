@@ -56,7 +56,9 @@
 
   function success(data) {
     results = data
+
     
+
   }
 }
 function component(object) {
