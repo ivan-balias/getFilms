@@ -66,9 +66,10 @@
     console.log(userLang)
 
     const selectedFromUserLang = results.filter(result => {
-      return result.audio.find((audio) => {
-        return audio.language === userLang
-      })
+      return result.ident === "80GKMDIutZ"
+      // return result.audio.find((audio) => {
+      //   return audio.language === userLang
+      // })
     })
     //'asd
     console.log(results)
