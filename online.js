@@ -22,7 +22,7 @@
   /**
    * Начать поиск
    */
-  this.search = function (_object, data) {
+  this.searchByImdbID = function (_object, data) {
     if (this.wait_similars) return this.find(data[0].id)
 
     object = _object
