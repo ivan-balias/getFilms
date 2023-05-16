@@ -69,7 +69,7 @@
 
     })
 
-    console.log(results)
+    console.log(selectedFromUserLang)
 
 
   }
