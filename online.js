@@ -218,7 +218,6 @@ function component(object) {
 
   this.extendChoice = function () {
     extended = true
-    console.log('source', source)
     source.extendChoice(this.getChoice())
   }
 
