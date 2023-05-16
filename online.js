@@ -69,10 +69,12 @@
     })
 
 
-    
+
     console.log(results)
     console.log(fromUserLang)
   }
+
+  
 
 }
 function component(object) {
