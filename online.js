@@ -15,7 +15,7 @@
 
   const network = new Lampa.Reguest()
 
-  this.load = (path, body) => {
+  this.load = async (path, body) => {
     const url = `${ENDPOINT}${path}`
     const headers = {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -26,8 +26,8 @@
       console.log(response)
     }, (err)=>console.log(err) ,{}, {method: "POST", headers})
 
-    // const response = await (await fetch(url, {method: "POST", body, headers})).text();
-    // const xml = new DOMParser().parseFromString(response, "application/xml");
+    const response = await (await fetch(url, {method: "POST", body, headers})).text();
+    const xml = new DOMParser().parseFromString(response, "application/xml");
     // try {
     //   const response = xml.getElementsByTagName("response")[0];
     //   if (!response)
@@ -40,15 +40,15 @@
     // }
   }
 
-  this.loadValue = (path, body, param) => {
-    const xml = this.load(path, body);
+  this.loadValue = async (path, body, param) => {
+    const xml = await this.load(path, body);
     return xml.getElementsByTagName(param)[0].textContent;
   }
 
-  this.fileLink = (ident) => {
+  this.fileLink = async (ident) => {
     console.log(ident)
-    const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream`;
-    return this.loadValue(PATH.FILE_LINK, body, "link");
+    // const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream`;
+    // return this.loadValue(PATH.FILE_LINK, body, "link");
   }
 }
 
