@@ -71,7 +71,7 @@
   }
 
   function getFile(element){
-        
+
 
     let file = ''
     let quality = 0
