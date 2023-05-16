@@ -77,9 +77,7 @@
       return getStreamLang(stream)
     })
 
-    //'asd
-
-
+    
     console.log(results)
     console.log(fromUserLang)
   }
