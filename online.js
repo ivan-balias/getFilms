@@ -154,6 +154,20 @@ function component(object) {
     return new sources[balanser](this, object)
   }
 
+
+  this.proxy = function(name){
+    let prox = Lampa.Storage.get('online_proxy_all')
+    let need = Lampa.Storage.get('online_proxy_'+name)
+
+    if(need) prox = need
+
+    if(prox && prox.slice(-1) !== '/'){
+      prox += '/'
+    }
+
+    return prox
+  }
+  
   this.create = function () {
     return this.render()
   }
