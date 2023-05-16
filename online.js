@@ -78,7 +78,9 @@
 
     _object.reset();
 
-    _object.draw()
+    _object.draw(items, {
+      
+    })
 
   }
 
