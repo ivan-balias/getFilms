@@ -21,7 +21,7 @@
     // network.
     network.silent(url, (response) => {
       console.log(response)
-    }, _ ,{}, {method: "POST", headers})
+    }, (err)=>console.log(err) ,{}, {method: "POST", headers})
 
     // const response = await (await fetch(url, {method: "POST", body, headers})).text();
     // const xml = new DOMParser().parseFromString(response, "application/xml");
