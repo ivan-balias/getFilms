@@ -68,8 +68,10 @@
     // const selectedFromUserLang = results.filter(result)
 
 
-    const fromUserLang = results.reduce(() => {
-
+    const fromUserLang = results.reduce((arr, cur) => {
+        return cur.audio.filter(el => {
+          return el.language === userLang
+        }) ? arr.push(cur) : arr
     }, [])
 
     //'asd
