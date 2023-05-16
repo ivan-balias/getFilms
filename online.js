@@ -1,6 +1,56 @@
 (()=>{
   'use strict'
-  function scc(_object, data) {
+  function webshare() {
+  const ENDPOINT = 'https://webshare.cz';
+  const PATH = {
+    SALT: "/api/salt/",
+    LOGIN: "/api/login/",
+    USER_DATA: "/api/user_data/",
+    FILE_LINK: "/api/file_link/",
+    SEARCH: "/api/search/",
+    FILE_INFO: "/api/file_info/",
+  }
+
+  const TOKEN = "N66aObXYOWcPFLZL"
+
+  const network = new Lampa.Reguest()
+
+  this.load = (path, body) => {
+    const url = `${ENDPOINT}${path}`
+    const headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+    // network.
+    network.silent(url, (response) => {
+      console.log(response)
+    }, _ ,{}, {method: "POST", headers})
+
+    // const response = await (await fetch(url, {method: "POST", body, headers})).text();
+    // const xml = new DOMParser().parseFromString(response, "application/xml");
+    // try {
+    //   const response = xml.getElementsByTagName("response")[0];
+    //   if (!response)
+    //     throw new Error("Unexpected response");
+    //   if (response.getElementsByTagName("status")?.[0]?.textContent !== "OK")
+    //     throw new Error(response.getElementsByTagName("message")?.[0]?.textContent || undefined);
+    //   return response;
+    // } catch (error) {
+    //   throw error;
+    // }
+  }
+
+  this.loadValue = (path, body, param) => {
+    const xml = this.load(path, body);
+    return xml.getElementsByTagName(param)[0].textContent;
+  }
+
+  this.fileLink = (ident) => {
+    console.log(ident)
+    const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream`;
+    return this.loadValue(PATH.FILE_LINK, body, "link");
+  }
+}
+
+
+function scc(_object, data) {
   const ENDPOINT = 'https://plugin.sc2.zone';
   const PATH = {
     SEARCH: "/api/media/filter/v2/search?order=desc&sort=score&type=*",
@@ -68,9 +118,17 @@
       return stream.audio.at(0).language === userLang
     })
 
+    const webshare = new Webshare()
+
+    const filteredFilms = fromUserLang.map(async (stream) => {
+      return await webshare.fileLink(stream.ident)
+    })
+
+    console.log(filteredFilms)
+
   }
 
-  function getFile(element){
+  function getFile(element) {
 
 
     let file = ''
@@ -82,9 +140,9 @@
     }
   }
 
-  function toPlayElement(element){
+  function toPlayElement(element) {
     let extra = getFile(element, element.quality)
-    let play  = {
+    let play = {
       title: element.title,
       url: extra.file,
       quality: extra.quality,
@@ -95,14 +153,14 @@
     return play
   }
 
-  function append(items){
+  function append(items) {
     _object.reset()
 
-    _object.draw(items,{
-      onRender: (item, html)=>{
-        if(get_links_wait) html.find('.online-prestige__body').append($('<div class="online-prestige__scan-file"><div class="broadcast__scan"><div></div></div></div>'))
+    _object.draw(items, {
+      onRender: (item, html) => {
+        if (get_links_wait) html.find('.online-prestige__body').append($('<div class="online-prestige__scan-file"><div class="broadcast__scan"><div></div></div></div>'))
       },
-      onEnter: (item, html)=>{
+      onEnter: (item, html) => {
         // let extra = getFile(item, item.quality)
         //
         // if(extra.file){
@@ -128,7 +186,7 @@
         // }
         // else Lampa.Noty.show(Lampa.Lang.translate(get_links_wait ? 'online_waitlink' : 'online_nolink'))
       },
-      onContextMenu: (item, html, data, call)=>{
+      onContextMenu: (item, html, data, call) => {
         // call(getFile(item, item.quality))
       }
     })
