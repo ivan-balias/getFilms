@@ -8,6 +8,8 @@
   }
   const TOKEN = "th2tdy0no8v1zoh1fs59"
 
+  console.log(data)
+
   let network = new Lampa.Reguest()
   let extract = {}
   let results = []
