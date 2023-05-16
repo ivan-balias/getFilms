@@ -56,6 +56,7 @@
     results = json
 
     build(json)
+    console.log(json)
 
     _object.loading(false)
   }
