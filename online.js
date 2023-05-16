@@ -14,8 +14,6 @@
     voice_name: ''
   }
 
-  console.log(data)
-
   let network = new Lampa.Reguest()
   let extract = {}
   let results = []
