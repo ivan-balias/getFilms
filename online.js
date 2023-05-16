@@ -70,6 +70,18 @@
 
   }
 
+  function getFile(element){
+        
+
+    let file = ''
+    let quality = 0
+
+    return {
+      file: file,
+      quality: quality
+    }
+  }
+
   function toPlayElement(element){
     let extra = getFile(element, element.quality)
     let play  = {
