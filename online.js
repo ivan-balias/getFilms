@@ -79,7 +79,9 @@
     _object.reset();
 
     _object.draw(items, {
-      
+      onRender: (item,html) => {
+        
+      }
     })
 
   }
