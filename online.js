@@ -108,7 +108,7 @@
         // else Lampa.Noty.show(Lampa.Lang.translate(get_links_wait ? 'online_waitlink' : 'online_nolink'))
       },
       onContextMenu: (item, html, data, call)=>{
-        call(getFile(item, item.quality))
+        // call(getFile(item, item.quality))
       }
     })
   }
