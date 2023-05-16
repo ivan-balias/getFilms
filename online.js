@@ -19,9 +19,9 @@
     const url = `${ENDPOINT}${path}`
     const headers = {'Content-Type': 'application/x-www-form-urlencoded'};
     // network.
-    network.silent(url, (response) => {
-      console.log(response)
-    }, _ ,{}, {method: "POST", headers})
+    // network.silent(url, (response) => {
+    //   console.log(response)
+    // }, _ ,{}, {method: "POST", headers})
 
     // const response = await (await fetch(url, {method: "POST", body, headers})).text();
     // const xml = new DOMParser().parseFromString(response, "application/xml");
