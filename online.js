@@ -67,7 +67,7 @@
 
     // const selectedFromUserLang = results.filter(result)
     const getStreamLang = (stream) => {
-      const isCorrectLang = stream.filter(item => {
+      const isCorrectLang = stream.audio.filter(item => {
         return item.language === userLang
       })
       return !!isCorrectLang
@@ -76,7 +76,7 @@
     const fromUserLang = streams.filter((stream) => {
       return getStreamLang(stream)
     })
-    
+
     console.log(results)
     console.log(fromUserLang)
   }
