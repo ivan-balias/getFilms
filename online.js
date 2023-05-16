@@ -59,10 +59,10 @@
   }
 
   function build(_data){
-    console.log(data)
+    console.log(_data)
     // 'asdasd'
     if(data.movie){
-      
+
     }
   }
 
