@@ -62,8 +62,10 @@
   function build(results){
     network.timeout(20000)
 
+    const userLang = Lampa.Storage.get('')
+
     const selectedFromUserLang = results.filter(result => {
-      
+
     })
 
     console.log(results)
