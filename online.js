@@ -44,7 +44,7 @@
       url = Lampa.Utils.addUrlComponent(url, `&access_token=${encodeURIComponent(TOKEN)}`)
 
       network.silent(url, (streams) => {
-        console.log(streams)
+        // console.log(streams)
         success(streams)
       })
     })
@@ -56,6 +56,7 @@
 
   function success(data) {
     results = data
+    
   }
 }
 function component(object) {
