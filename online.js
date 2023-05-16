@@ -59,6 +59,7 @@
   }
 
   function build(_data){
+    network.timeout(20000)
     console.log(_data)
 
 
