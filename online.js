@@ -78,6 +78,8 @@
 
     _object.reset();
 
+    _object.draw()
+
   }
 
 }
