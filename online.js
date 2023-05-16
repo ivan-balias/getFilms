@@ -67,7 +67,20 @@
     const fromUserLang = streams.filter((stream) => {
       return stream.audio.at(0).language === userLang
     })
-    
+
+  }
+  
+  function toPlayElement(element){
+    let extra = getFile(element, element.quality)
+    let play  = {
+      title: element.title,
+      url: extra.file,
+      quality: extra.quality,
+      timeline: element.timeline,
+      callback: element.mark
+    }
+
+    return play
   }
 
   function append(items){
