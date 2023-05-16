@@ -61,18 +61,21 @@
 
   }
 
-  function build(results) {
+  function build(streams) {
     network.timeout(20000)
 
 
     // const selectedFromUserLang = results.filter(result)
+    const getStreamLang = (stream) => {
+      const isCorrectLang = stream.filter(item => {
+        return item.language === userLang
+      })
+      return !!isCorrectLang
+    }
 
-
-    const fromUserLang = results.reduce((arr, cur) => {
-        return cur.audio.filter(el => {
-          return el.language === userLang
-        }) ? arr.push(cur) : arr
-    }, [])
+    const fromUserLang = streams.filter((stream) => {
+      return getStreamLang(stream)
+    })
 
     //'asd
 
