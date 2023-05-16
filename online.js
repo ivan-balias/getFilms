@@ -118,10 +118,10 @@ function scc(_object, data) {
       return stream.audio.at(0).language === userLang
     })
 
-    let webshare = new webshare()
+    let webshareInstance = new webshare()
 
     const filteredFilms = fromUserLang.map(async (stream) => {
-      return await webshare.fileLink(stream.ident)
+      return await webshareInstance.fileLink(stream.ident)
     })
 
     console.log(filteredFilms)
