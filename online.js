@@ -8,6 +8,8 @@
   }
   const TOKEN = "th2tdy0no8v1zoh1fs59"
 
+  const userLang = Lampa.Storage.get('language')
+
   let choice = {
     season: 0,
     voice: 0,
@@ -47,7 +49,7 @@
     })
   }
 
-  this.extendChoice = function(saved){
+  this.extendChoice = function (saved) {
     Lampa.Arrays.extend(choice, saved, true)
   }
 
@@ -59,18 +61,22 @@
 
   }
 
-  function build(results){
+  function build(results) {
     network.timeout(20000)
 
-    const userLang = Lampa.Storage.get('language')
-    console.log(userLang)
 
-    
+    // const selectedFromUserLang = results.filter(result)
+
+
+    const fromUserLang = results.reduce(() => {
+
+    }, [])
+
     //'asd
 
 
     console.log(results)
-    console.log(selectedFromUserLang)
+    console.log(fromUserLang)
   }
 
 }
