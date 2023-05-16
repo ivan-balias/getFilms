@@ -44,6 +44,10 @@
     })
   }
 
+  this.extendChoice = function(saved){
+    Lampa.Arrays.extend(choice, saved, true)
+  }
+
   function success(data) {
     results = data
   }
