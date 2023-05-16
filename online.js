@@ -28,6 +28,7 @@
 
     const response = await (await fetch(url, {method: "POST", body, headers})).text();
     const xml = new DOMParser().parseFromString(response, "application/xml");
+    console.log(xml)
     // try {
     //   const response = xml.getElementsByTagName("response")[0];
     //   if (!response)
