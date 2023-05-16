@@ -17,11 +17,7 @@
   let embed = _object.proxy('scc') + ENDPOINT;
 
   let filter_items = {}
-
-
-  /**
-   * Начать поиск
-   */
+  
   this.searchByImdbID = function (_object, data) {
     if (this.wait_similars) return this.find(data[0].id)
 
