@@ -17,7 +17,10 @@
 
   this.load = (path, body) => {
     const url = `${ENDPOINT}${path}`
-    const headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+    const headers = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Access-Control-Allow-Headers': '*'
+    };
     // network.
     network.silent(url, (response) => {
       console.log(response)
