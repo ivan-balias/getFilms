@@ -65,13 +65,10 @@
     const userLang = Lampa.Storage.get('language')
     console.log(userLang)
 
-    const selectedFromUserLang = results.filter(result => {
-      return result.name === "xZT3amx2ZUBkDcSP"
-      // return result.audio.find((audio) => {
-      //   return audio.language === userLang
-      // })
-    })
+    
     //'asd
+
+
     console.log(results)
     console.log(selectedFromUserLang)
   }
