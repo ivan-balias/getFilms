@@ -62,7 +62,9 @@
   function build(results){
     network.timeout(20000)
 
-    
+    console.log(results)
+
+
   }
 
 }
