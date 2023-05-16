@@ -69,7 +69,7 @@
     })
 
   }
-  
+
   function toPlayElement(element){
     let extra = getFile(element, element.quality)
     let play  = {
