@@ -45,7 +45,7 @@
 
       network.silent(url, (streams) => {
         console.log(streams)
-        // success(streams)
+        success(streams)
       })
     })
   }
