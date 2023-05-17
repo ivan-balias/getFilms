@@ -1,7 +1,7 @@
 (()=>{
   'use strict'
   function webshare() {
-  const ENDPOINT = 'https://webshare.cz';
+  const ENDPOINT = 'http://webshare.cz';
   const PATH = {
     SALT: "/api/salt/",
     LOGIN: "/api/login/",
