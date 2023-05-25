@@ -22,8 +22,11 @@
       'Access-Control-Allow-Headers': '*'
     };
     // network.
+    console.log('webshare load method')
+
     network.silent(url, (response) => {
-      console.log('webshare')
+      console.log(url)
+      console.log('network')
       console.log(response)
     }, (err)=>console.log(err) ,{}, {method: "POST", headers})
 
@@ -42,8 +45,8 @@
     // }
   }
 
-  this.loadValue = async (path, body, param) => {
-    const xml = await this.load(path, body);
+  this.loadValue =  (path, body, param) => {
+    const xml =  this.load(path, body);
     return xml.getElementsByTagName(param)[0].textContent;
   }
 
