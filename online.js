@@ -27,7 +27,7 @@
     network.silent(url, (response) => {
       console.log(url)
       console.log('network')
-      console.log(response)
+      console.log(response, 'network response')
     }, (err)=>console.log(err) ,{}, {method: "POST", headers})
 
     // const response = await (await fetch(url, {method: "POST", body, headers})).text();
