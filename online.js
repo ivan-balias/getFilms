@@ -47,10 +47,10 @@
     return xml.getElementsByTagName(param)[0].textContent;
   }
 
-  this.fileLink = async (ident) => {
+  this.fileLink = (ident) => {
     console.log(ident)
     const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream&force_https=0`;
-    return await this.loadValue(PATH.FILE_LINK, body, "link");
+    return this.loadValue(PATH.FILE_LINK, body, "link");
   }
 }
 
@@ -125,8 +125,8 @@ function scc(_object, data) {
 
     let webshareInstance = new webshare()
 
-    const filteredFilms = fromUserLang.map(async (stream) => {
-      return await webshareInstance.fileLink(stream.ident)
+    const filteredFilms = fromUserLang.map((stream) => {
+      return webshareInstance.fileLink(stream.ident)
     })
 
     console.log(filteredFilms)
