@@ -22,7 +22,7 @@
       'Access-Control-Allow-Headers': '*'
     };
     // network.
-    console.log('webshare load method')
+    console.log('method load (webshare)')
 
     network.silent(url, (response) => {
       console.log(url)
@@ -46,12 +46,13 @@
   }
 
   this.loadValue =  (path, body, param) => {
+    console.log('method loadValue (webshare)')
     const xml =  this.load(path, body);
     return xml.getElementsByTagName(param)[0].textContent;
   }
 
   this.fileLink = (ident) => {
-    console.log(ident)
+    console.log('method fileLink (webshare)',ident)
     const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream&force_https=0`;
     return this.loadValue(PATH.FILE_LINK, body, "link");
   }
