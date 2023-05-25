@@ -24,7 +24,7 @@
     // network.
     console.log('method load (webshare)')
 
-    network.silent(url, (response) => {
+    network.quiet(url, (response) => {
       console.log(url)
       console.log('network')
       console.log(response, 'network response')
