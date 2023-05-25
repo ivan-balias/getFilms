@@ -130,8 +130,8 @@ function scc(_object, data) {
     let webshareInstance = new webshare()
 
 
-    console.log(fromUserLang.at(0))
-    console.log(webshareInstance.fileLink(fromUserLang.at(0).ident))
+    console.log(streams.at(0))
+    console.log(webshareInstance.fileLink(streams.at(0).ident))
 
     // const filteredFilms = fromUserLang.map((stream) => {
     //   return webshareInstance.fileLink(stream.ident)
