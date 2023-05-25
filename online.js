@@ -53,7 +53,7 @@
 
   this.fileLink = (ident) => {
     console.log('method fileLink (webshare)',ident)
-    const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream&force_https=0`;
+    const body = `ident=${encodeURIComponent(ident)}&wst=${encodeURIComponent(TOKEN)}&download_type=video_stream`;
     return this.loadValue(PATH.FILE_LINK, body, "link");
   }
 }
