@@ -23,6 +23,7 @@
     };
     // network.
     network.silent(url, (response) => {
+      console.log('webshare')
       console.log(response)
     }, (err)=>console.log(err) ,{}, {method: "POST", headers})
 
